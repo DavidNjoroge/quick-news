@@ -10,11 +10,11 @@ def index():
 
     # getting sources
     sources=get_source()
-    cnn=get_articles('cnn')
+    cnn=get_articles('bbc-sport')
     # print(sources)
-
+    trunc=cnn[0:4]
     title='Home - Where you can find all your latest news in one website'
-    return render_template('index.html' ,title=title,sources=sources,cnn=cnn)
+    return render_template('index.html' ,title=title,sources=sources,cnn=trunc)
 
 @app.route('/source/<source_name>')
 def source(source_name):

@@ -55,92 +55,14 @@
         <div class="row">
           {% for article in cnn %}
           <div class="col-xs-6 col-md-3 thumbnail">
-            <a href="#" class="">
+            <a href={{article.url}} class="">
               <img src={{article.image}} alt="image here">
-              <h5>{{article.title}}</h5>
+              <h5>{{article.title|truncate(45)}}</h5>
             </a>
-            <p>{{article.description}}</p>
+            <p>{{article.description|truncate(50)}}</p>
             <p>{{article.date}}</p>
           </div>
           {% endfor %}
-          <div class="col-xs-6 col-md-3 thumbnail">
-            <a href="#" class="">
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-              <h5>Spain deadline...</h5>
-            </a>
-            <p>The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.</p>
-            <p>2017-10-19T06:36:23Z</p>
-          </div>
-          <div class="col-xs-6 col-md-3 thumbnail">
-            <a href="#" class="">
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-              <h5>Spain deadline...</h5>
-            </a>
-            <p>The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.</p>
-            <p>2017-10-19T06:36:23Z</p>
-          </div>
-          <div class="col-xs-6 col-md-3 thumbnail">
-            <a href="#" class="">
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-              <h5>Spain deadline...</h5>
-            </a>
-            <p>The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.</p>
-            <p>2017-10-19T06:36:23Z</p>
-          </div>
-        </div>
-        <h2>Aljazeera</h2>
-        <div class="row">
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
-        </div>
-        <h2>techcrunch</h2>
-        <div class="row">
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <h5>Spain deadline...</h5>
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-            </a>
-          </div>
         </div>
 
       </div>
