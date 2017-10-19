@@ -51,16 +51,18 @@
       <div class="col-md-10">
 
         <h1>LAtest News</h1>
-        <h3>BBC NEWS</h3>
+        <h3>CNN</h3>
         <div class="row">
+          {% for article in cnn %}
           <div class="col-xs-6 col-md-3 thumbnail">
             <a href="#" class="">
-              <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">
-              <h5>Spain deadline...</h5>
+              <img src={{article.image}} alt="image here">
+              <h5>{{article.title}}</h5>
             </a>
-            <p>The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.</p>
-            <p>2017-10-19T06:36:23Z</p>
+            <p>{{article.description}}</p>
+            <p>{{article.date}}</p>
           </div>
+          {% endfor %}
           <div class="col-xs-6 col-md-3 thumbnail">
             <a href="#" class="">
               <img src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/13021/production/_98375877_395bd7be-5b26-4417-8b53-aaf346a7b177.jpg" alt="">

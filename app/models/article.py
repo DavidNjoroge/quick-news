@@ -1,8 +1,8 @@
 class Article:
-    def __init__(self,author,title,discription,url,image,date):
+    def __init__(self,author,title,description,url,image,date):
         self.author =author
         self.title = title
-        self.discription = discription
+        self.description = description
         self.url =url
         self.image = image
         self.date = date

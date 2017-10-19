@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_source
+from .request import get_source,get_articles
 
 @app.route('/')
 def index():
@@ -10,10 +10,11 @@ def index():
 
     # getting sources
     sources=get_source()
-    print(sources)
+    cnn=get_articles('cnn')
+    # print(sources)
 
     title='Home - Where you can find all your latest news in one website'
-    return render_template('index.html' ,title=title,sources=sources)
+    return render_template('index.html' ,title=title,sources=sources,cnn=cnn)
 
 @app.route('/source/<source_name>')
 def source(source_name):
