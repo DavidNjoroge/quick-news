@@ -1,74 +1,82 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html'%} {% block content %}
 
-<head>
-  <meta charset="utf-8"> {% if title %}
-  <title>{{ title }}</title>
-  {% else %}
-  <title>welcome to quick news</title>
-  {% endif %}
+<div class="container">
+  <ul class="nav navbar-nav">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <h1>quick news</h1>
+    <li><a href="#">technology</a></li>
+    <li><a href="#">general</a></li>
+    <li><a href="#">business</a></li>
+    <li><a href="#">sports</a></li>
+
+
+  </ul>
+
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <h3>top sources</h3>
+      <ul>
+        {% for source_item in sources %}
+        <li>{{ source_item.name}}</li>
+        {% endfor %}
+
+        <li><a href="#">bbc</a></li>
+        <li><a href="#">aljazeera</a></li>
+        <li><a href="#">ktn</a></li>
+        <li><a href="#">techcrunch</a></li>
+        <li><a href="#">sports</a></li>
+
+      </ul>
+
     </div>
-  </nav>
-  <div class="container">
-    <ul class="nav navbar-nav">
+    <div class="col-md-10">
 
-
-      <li><a href="#">technology</a></li>
-      <li><a href="#">general</a></li>
-      <li><a href="#">business</a></li>
-      <li><a href="#">sports</a></li>
-
-
-    </ul>
-
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2">
-        <h3>top sources</h3>
-        <ul>
-          {% for source_item in sources %}
-          <li>{{ source_item.name}}</li>
-          {% endfor %}
-
-          <li><a href="#">bbc</a></li>
-          <li><a href="#">aljazeera</a></li>
-          <li><a href="#">ktn</a></li>
-          <li><a href="#">techcrunch</a></li>
-          <li><a href="#">sports</a></li>
-
-        </ul>
-
-      </div>
-      <div class="col-md-10">
-
-        <h1>LAtest News</h1>
-        <h3>CNN</h3>
-        <div class="row">
-          {% for article in cnn %}
-          <div class="col-xs-6 col-md-3 thumbnail">
-            <a href={{article.url}} class="">
+      <h1>LAtest News</h1>
+      <h3>CNN</h3>
+      <div class="row">
+        {% for article in cnn %}
+        <div class="col-xs-6 col-md-3 thumbnail">
+          <a href={{article.url}} class="">
               <img src={{article.image}} alt="image here">
               <h5>{{article.title|truncate(45)}}</h5>
             </a>
-            <p>{{article.description|truncate(50)}}</p>
-            <p>{{article.date}}</p>
-          </div>
-          {% endfor %}
+          <p>{{article.description|truncate(50)}}</p>
+          <p>{{article.date}}</p>
         </div>
-
+        {% endfor %}
       </div>
+
+      <h3>BBC SPORTS</h3>
+      <div class="row">
+        {% for article in bbc_sport %}
+        <div class="col-xs-6 col-md-3 thumbnail">
+          <a href={{article.url}} class="">
+              <img src={{article.image}} alt="image here">
+              <h5>{{article.title|truncate(45)}}</h5>
+            </a>
+          <p>{{article.description|truncate(50)}}</p>
+          <p>{{article.date}}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <h3>TechCrunch</h3>
+      <div class="row">
+        {% for article in techcrunch %}
+        <div class="col-xs-6 col-md-3 thumbnail">
+          <a href={{article.url}} class="">
+              <img src={{article.image}} alt="image here">
+              <h5>{{article.title|truncate(45)}}</h5>
+            </a>
+          <p>{{article.description|truncate(50)}}</p>
+          <p>{{article.date}}</p>
+        </div>
+        {% endfor %}
+      </div>
+
     </div>
   </div>
-
-</body>
-
-</html>
+</div>
+{% endblock %}
