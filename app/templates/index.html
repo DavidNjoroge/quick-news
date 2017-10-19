@@ -19,7 +19,8 @@
   </nav>
   <div class="container">
     <ul class="nav navbar-nav">
-      <li><a href="#">entertainment</a></li>
+
+
       <li><a href="#">technology</a></li>
       <li><a href="#">general</a></li>
       <li><a href="#">business</a></li>
@@ -34,6 +35,10 @@
       <div class="col-md-2">
         <h3>top sources</h3>
         <ul>
+          {% for source_item in sources %}
+          <li>{{ source_item.name}}</li>
+          {% endfor %}
+
           <li><a href="#">bbc</a></li>
           <li><a href="#">aljazeera</a></li>
           <li><a href="#">ktn</a></li>

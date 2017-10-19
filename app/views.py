@@ -13,7 +13,7 @@ def index():
     print(sources)
 
     title='Home - Where you can find all your latest news in one website'
-    return render_template('index.html' ,title=title)
+    return render_template('index.html' ,title=title,sources=sources)
 
 @app.route('/source/<source_name>')
 def source(source_name):
