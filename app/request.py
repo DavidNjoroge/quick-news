@@ -12,7 +12,7 @@ api_key= app.config['NEWS_API_KEY']
 source_url=app.config['SOURCE_API_BASE_URL']
 base_url=app.config['ARTICLE_API_BASE_URL']
 
-def get_source():
+def get_sources():
     '''
     function that gets the sources
     '''

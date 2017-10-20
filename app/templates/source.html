@@ -1,0 +1,126 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <ul class="nav navbar-nav">
+
+
+    <li><a href="#">technology</a></li>
+    <li><a href="#">general</a></li>
+    <li><a href="#">business</a></li>
+    <li><a href="#">sports</a></li>
+    <li><a href="#">{{id}}</a></li>
+
+
+  </ul>
+
+</div>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-2">
+      <h3>top sources</h3>
+      <ul>
+        {% for source_item in sources %}
+        <li>{{ source_item.name}}</li>
+        {% endfor %}
+
+        <li><a href="#">bbc</a></li>
+        <li><a href="#">aljazeera</a></li>
+        <li><a href="#">ktn</a></li>
+        <li><a href="#">techcrunch</a></li>
+        <li><a href="#">sports</a></li>
+
+      </ul>
+
+    </div>
+    <div class="col-md-10">
+      <h1>bbc_sport</h1> {% for source_item in source %}
+      <li><a href="/source/{{source_item.id}}">{{ source_item.name}}</a></li>
+      <div class="row thumbnail">
+        <div class="col-md-9">
+          <div class="article">
+            <a href="{{source_item}}">
+              <h5><strong>{{source_item.title}}</strong></h5></a>
+            <p>{{source_item.description}}</p>
+            <p>2017-10-19T15:01:01Z</p>
+
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="thumbnail">
+
+            <img src="{{source_item.image}}" alt="">
+          </div>
+
+        </div>
+      </div>
+
+
+      {% endfor %}
+
+
+
+
+      <div class="row thumbnail">
+        <div class="col-md-9">
+          <div class="article">
+            <h5><strong>Ancelotti to Leicester unlikely, says Clement  </strong></h5>
+            <p>Paul Clement believes rumours linking Carlo Ancelotti with the Leicester City job are wide of the mark as the Italian enjoys some time off.</p>
+            <p>2017-10-19T15:01:01Z</p>
+
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="thumbnail">
+
+            <img src="https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/carloancelotti-cropped_1uz4a3vwy7zns197t5slkwyu0h.jpg" alt="">
+          </div>
+
+        </div>
+      </div>
+      <div class="row thumbnail">
+        <div class="col-md-9">
+          <div class="article">
+            <h5><strong>Ancelotti to Leicester unlikely, says Clement  </strong></h5>
+            <p>Paul Clement believes rumours linking Carlo Ancelotti with the Leicester City job are wide of the mark as the Italian enjoys some time off.</p>
+            <p>2017-10-19T15:01:01Z</p>
+
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="thumbnail">
+
+            <img src="https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/carloancelotti-cropped_1uz4a3vwy7zns197t5slkwyu0h.jpg" alt="">
+          </div>
+
+        </div>
+      </div>
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock %}
