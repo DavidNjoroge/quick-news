@@ -19,7 +19,7 @@
       <h3>top sources</h3>
       <ul>
         {% for source_item in sources %}
-        <li><a href="/source/{{source_item.id}}">{{ source_item.name}}</a></li>
+        <li><a href="/source/{{source_item.id}}/{{source_item.category}}">{{ source_item.name}}</a></li>
         {% endfor %}
 
 
@@ -34,9 +34,9 @@
         {% for article in cnn %}
         <div class="col-xs-6 col-md-3 thumbnail">
           <a href={{article.url}} target="_blank" class="">
-              <img src={{article.image}} alt="image here">
-              <h5>{{article.title|truncate(45)}}</h5>
-            </a>
+            <!-- <img src={{article.image}} alt="image here"> -->
+            <h5>{{article.title|truncate(45)}}</h5>
+          </a>
           <p>{{article.description|truncate(50)}}</p>
           <p>{{article.date}}</p>
         </div>
@@ -48,9 +48,9 @@
         {% for article in bbc_sport %}
         <div class="col-xs-6 col-md-3 thumbnail">
           <a href={{article.url}} target="_blank" class="">
-              <img src={{article.image}} alt="image here">
-              <h5>{{article.title|truncate(45)}}</h5>
-            </a>
+            <!-- <img src={{article.image}} alt="image here">category -->
+            <h5>{{article.title|truncate(45)}}</h5>
+          </a>
           <p>{{article.description|truncate(50)}}</p>
           <p>{{article.date}}</p>
         </div>
@@ -62,9 +62,9 @@
         {% for article in techcrunch %}
         <div class="col-xs-6 col-md-3 thumbnail">
           <a href={{article.url}} target="_blank" class="">
-              <img src={{article.image}} alt="image here">
-              <h5>{{article.title|truncate(45)}}</h5>
-            </a>
+            <!-- <img src={{article.image}} alt="image here"> -->
+            <h5>{{article.title|truncate(45)}}</h5>
+          </a>
           <p>{{article.description|truncate(50)}}</p>
           <p>{{article.date}}</p>
         </div>

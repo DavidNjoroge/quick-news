@@ -18,9 +18,9 @@
 
   <div class="row">
     <div class="col-md-2">
-      <h3>top sources</h3>
+      <h3>{{category}}</h3>
       <ul>
-        {% for source_item in sources %}
+        {% for source_item in category_list %}
         <li>{{ source_item.name}}</li>
         {% endfor %}
 
@@ -34,12 +34,12 @@
 
     </div>
     <div class="col-md-10">
-      <h1>bbc_sport</h1> {% for source_item in source %}
+      <h1>{{source_id}}</h1> {% for source_item in source %}
       <li><a href="/source/{{source_item.id}}">{{ source_item.name}}</a></li>
       <div class="row thumbnail">
         <div class="col-md-9">
           <div class="article">
-            <a href="{{source_item}}">
+            <a href="{{source_url}}" target="_blank">
               <h5><strong>{{source_item.title}}</strong></h5></a>
             <p>{{source_item.description}}</p>
             <p>2017-10-19T15:01:01Z</p>

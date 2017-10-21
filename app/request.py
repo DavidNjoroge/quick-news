@@ -11,6 +11,7 @@ api_key= app.config['NEWS_API_KEY']
 # getting the article base url
 source_url=app.config['SOURCE_API_BASE_URL']
 base_url=app.config['ARTICLE_API_BASE_URL']
+category_url=app.config['CATEGORY_API_BASE_URL']
 
 def get_sources():
     '''
@@ -18,8 +19,14 @@ def get_sources():
     '''
 
     with urllib.request.urlopen(source_url) as url:
+
+        print(url)
         get_source_data=url.read()
+
+        # print(get_source_data)
         get_source_response=json.loads(get_source_data)
+
+        # print(get_source_response)
 
         source_results=None
 
@@ -35,7 +42,7 @@ def get_articles(source):
     return: articles for that source
     '''
     get_articles_url= base_url.format(source,api_key)
-    print(get_articles_url)
+    # print(get_articles_url)
 
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data=url.read()
@@ -48,6 +55,22 @@ def get_articles(source):
             article_results=process_articles(article_results_list)
 
     return article_results
+
+def get_category(category):
+    get_category_url=category_url.format(category)
+
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data=url.read()
+        get_category_response=json.loads(get_category_data)
+
+        category_results=None
+
+        if get_category_response['sources']:
+            category_results_list=get_category_response['sources']
+            category_results=process_results(category_results_list)
+
+
+    return category_results
 
 def process_articles(article_list):
     '''
@@ -94,4 +117,7 @@ def process_results(source_list):
         source_object=Source(id,name,description,url,category)
         source_results.append(source_object)
 
+	# print(source_results)
+
+    print(len(source_results))
     return source_results
