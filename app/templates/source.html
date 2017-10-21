@@ -21,21 +21,19 @@
       <h3>{{category}}</h3>
       <ul>
         {% for source_item in category_list %}
-        <li>{{ source_item.name}}</li>
+        <li><a href="/source/{{source_item.id}}/{{source_item.category}}">{{ source_item.name}}</a></li>
         {% endfor %}
 
-        <li><a href="#">bbc</a></li>
-        <li><a href="#">aljazeera</a></li>
-        <li><a href="#">ktn</a></li>
-        <li><a href="#">techcrunch</a></li>
-        <li><a href="#">sports</a></li>
+
+      </ul>
+
 
       </ul>
 
     </div>
     <div class="col-md-10">
       <h1>{{source_id}}</h1> {% for source_item in source %}
-      <li><a href="/source/{{source_item.id}}">{{ source_item.name}}</a></li>
+      <h5><a href="/source/{{source_item.id}}">{{ source_item.name}}</a></h5>
       <div class="row thumbnail">
         <div class="col-md-9">
           <div class="article">
@@ -58,46 +56,6 @@
 
 
       {% endfor %}
-
-
-
-
-      <div class="row thumbnail">
-        <div class="col-md-9">
-          <div class="article">
-            <h5><strong>Ancelotti to Leicester unlikely, says Clement  </strong></h5>
-            <p>Paul Clement believes rumours linking Carlo Ancelotti with the Leicester City job are wide of the mark as the Italian enjoys some time off.</p>
-            <p>2017-10-19T15:01:01Z</p>
-
-
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="thumbnail">
-
-            <img src="https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/carloancelotti-cropped_1uz4a3vwy7zns197t5slkwyu0h.jpg" alt="">
-          </div>
-
-        </div>
-      </div>
-      <div class="row thumbnail">
-        <div class="col-md-9">
-          <div class="article">
-            <h5><strong>Ancelotti to Leicester unlikely, says Clement  </strong></h5>
-            <p>Paul Clement believes rumours linking Carlo Ancelotti with the Leicester City job are wide of the mark as the Italian enjoys some time off.</p>
-            <p>2017-10-19T15:01:01Z</p>
-
-
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="thumbnail">
-
-            <img src="https://images.cdn.fourfourtwo.com/sites/fourfourtwo.com/files/carloancelotti-cropped_1uz4a3vwy7zns197t5slkwyu0h.jpg" alt="">
-          </div>
-
-        </div>
-      </div>
       <nav aria-label="Page navigation">
         <ul class="pagination">
           <li>

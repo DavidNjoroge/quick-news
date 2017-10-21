@@ -32,3 +32,19 @@ def source(source_id,category):
 # @app.route('/')
 # def asdf():
 #     render_template('source.html')
+@app.route('/<category>')
+def category(category):
+    '''
+    view a specific category
+    '''
+    category_list=get_category(category.lower())
+    print(category_list[0].name)
+
+    row_one=(get_articles(category_list[0].id))[0:4]
+    # row1=get_rows(source_list,2)
+    row_two=(get_articles(category_list[1].id))[0:4]
+    row_three=(get_articles(category_list[2].id))[0:4]
+    row_four=(get_articles(category_list[3].id))[0:4]
+
+
+    return render_template('category.html',category=category,category_list=category_list,row_one=row_one,row_two=row_two,row_three=row_three,row_four=row_four)
