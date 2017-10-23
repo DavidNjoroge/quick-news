@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_sources,get_articles,get_category
+from .request import get_sources,get_articles,get_category,process_category
 
 caegory=None
 
@@ -37,14 +37,29 @@ def category(category):
     '''
     view a specific category
     '''
-    category_list=get_category(category.lower())
-    print(category_list[0].name)
+    cat=category.lower()
+    category_list=get_category(cat)
+    # print(len(category_list))
+    # print(category_list[0].id)
+    # if len(category_list)>=4 :
+    # row_one=(get_articles(category_list[0].id))[0:4]
+    articles_list=process_category(category_list)
+    print(len(articles_list[0]))
 
-    row_one=(get_articles(category_list[0].id))[0:4]
     # row1=get_rows(source_list,2)
-    row_two=(get_articles(category_list[1].id))[0:4]
-    row_three=(get_articles(category_list[2].id))[0:4]
-    row_four=(get_articles(category_list[3].id))[0:4]
+    # row_two=(get_articles(category_list[1].id))[0:4]
+    # row_three=(get_articles(category_list[2].id))[0:4]
+    # row_four=(get_articles(category_list[3].id))[0:4]
 
 
-    return render_template('category.html',category=category,category_list=category_list,row_one=row_one,row_two=row_two,row_three=row_three,row_four=row_four)
+    return render_template('category.html',category=category,category_list=category_list,articles_list=articles_list)
+    # elif len(category_list)>=3:
+    #     row_one=(get_articles(category_list[0].id))[0:4]
+    #     print(row_one[0].title)
+    #
+    #     # row1=get_rows(source_list,2)
+    #     row_two=(get_articles(category_list[1].id))[0:4]
+    #     row_three=(get_articles(category_list[2].id))[0:4]
+    #
+    #
+    #     return render_template('category.html',category=category,category_list=category_list,row_one=row_one,row_two=row_two,row_three=row_three)

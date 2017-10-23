@@ -1,18 +1,4 @@
 {% extends 'base.html'%} {% block content %}
-
-<div class="container">
-  <ul class="nav navbar-nav">
-
-
-    <li><a href="#">technology</a></li>
-    <li><a href="#">general</a></li>
-    <li><a href="#">business</a></li>
-    <li><a href="#">sports</a></li>
-
-
-  </ul>
-
-</div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
@@ -27,11 +13,11 @@
 
     </div>
     <div class="col-md-10">
+      <h1>{{category}} News</h1> {% for source in articles_list %}
 
-      <h1>{{category}} News</h1>
-      <h3>{{category_list[0].name}}</h3>
+      <h3>{{source[0].source}}</h3>
       <div class="row">
-        {% for article in row_one %}
+        {% for article in source %}
         <div class="col-xs-6 col-md-3 thumbnail">
           <a href={{article.url}} target="_blank" class="">
             <!-- <img src={{article.image}} alt="image here"> -->
@@ -42,50 +28,7 @@
         </div>
         {% endfor %}
       </div>
-      <h3>{{category_list[1].name}}</h3>
-
-      <div class="row">
-        {% for article in row_two %}
-        <div class="col-xs-6 col-md-3 thumbnail">
-          <a href={{article.url}} target="_blank" class="">
-            <!-- <img src={{article.image}} alt="image here"> -->
-            <h5>{{article.title|truncate(45)}}</h5>
-          </a>
-          <p>{{article.description|truncate(50)}}</p>
-          <p>{{article.date}}</p>
-        </div>
-        {% endfor %}
-      </div>
-      <h3>{{category_list[2].name}}</h3>
-
-      <div class="row">
-        {% for article in row_three %}
-        <div class="col-xs-6 col-md-3 thumbnail">
-          <a href={{article.url}} target="_blank" class="">
-            <!-- <img src={{article.image}} alt="image here"> -->
-            <h5>{{article.title|truncate(45)}}</h5>
-          </a>
-          <p>{{article.description|truncate(50)}}</p>
-          <p>{{article.date}}</p>
-        </div>
-        {% endfor %}
-      </div>
-      <h3>{{category_list[3].name}}</h3>
-
-      <div class="row">
-        {% for article in row_four %}
-        <div class="col-xs-6 col-md-3 thumbnail">
-          <a href={{article.url}} target="_blank" class="">
-            <!-- <img src={{article.image}} alt="image here"> -->
-            <h5>{{article.title|truncate(45)}}</h5>
-          </a>
-          <p>{{article.description|truncate(50)}}</p>
-          <p>{{article.date}}</p>
-        </div>
-        {% endfor %}
-      </div>
-
-
+      {% endfor %}
 
     </div>
   </div>

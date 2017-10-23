@@ -51,8 +51,10 @@ def get_articles(source):
         article_results=None
 
         if get_articles_response['articles']:
+            source=get_articles_response['source']
+
             article_results_list=get_articles_response['articles']
-            article_results=process_articles(article_results_list)
+            article_results=process_articles(article_results_list,source)
 
     return article_results
 
@@ -72,7 +74,7 @@ def get_category(category):
 
     return category_results
 
-def process_articles(article_list):
+def process_articles(article_list,source_name):
     '''
     function that processthe results and turn them to a list
     args:
@@ -83,6 +85,7 @@ def process_articles(article_list):
 
     article_results=[]
     for article_item in article_list:
+        source=source_name
         author=article_item.get('author')
         title=article_item.get('title')
         description=article_item.get('description')
@@ -91,7 +94,7 @@ def process_articles(article_list):
         date=article_item.get('date')
 
 
-        article_object=Article(author,title,description,url,image,date)
+        article_object=Article(author,title,description,url,image,date,source)
         article_results.append(article_object)
 
     return article_results
@@ -119,5 +122,25 @@ def process_results(source_list):
 
 	# print(source_results)
 
-    print(len(source_results))
+    # print(len(source_results))
     return source_results
+def process_category(category_list):
+    # print(len(category_list))
+    category_processed=[]
+    if len(category_list)>=4:
+        temp_category=category_list[0:4]
+        for category in temp_category:
+            source=(get_articles(category.id))[0:4]
+            print(source[0].image)
+
+            # category_item=get_articles(category.id)
+            category_processed.append(source)
+    else:
+        for category in category_list:
+            source=(get_articles(category.id))[0:4]
+            print(source[0].image)
+
+            # category_item=get_articles(category.id)
+            category_processed.append(source)
+
+    return category_processed
